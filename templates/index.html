@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>OpenAI Quickstart</title>
+  <title>Interview Feedback</title>
   <link
     rel="shortcut icon"
     href="{{ url_for('static', filename='dog.png') }}"
@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Name my pet</h3>
-  <form action="/" method="post">
-    <input type="text" name="animal" placeholder="Enter an animal" required />
-    <input type="submit" value="Generate names" />
+  <h3>Upload Interview</h3>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <br>
+    <input type="file" name="file" placeholder="Enter an animal" required />
+    <input type="submit" value="Generate Feedback" />
   </form>
   {% if result %}
-  <div class="result">{{ result }}</div>
+  <textarea class="result" cols="150" rows="50">{{ result }}</textarea>
   {% endif %}
 </body>
